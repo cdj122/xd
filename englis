@@ -1,0 +1,15 @@
+def js(text):
+    words = text.lower().split()
+    wordss = {}
+    for word in words:
+        if word in wordss:
+            wordss[word] += 1
+        else:
+            wordss[word] = 1
+
+    return wordss
+
+text = "Boy Is this seat empty Girl Yes and this one will be if you sit down"
+all = js(text)
+for word, freq in all.items():
+    print(word,":",freq)
