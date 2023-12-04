@@ -1,0 +1,17 @@
+class Student:
+    school='山东商业职业技术学院'
+
+    def __init__(self,name,math,chinese):
+        # 构造方法，初始化姓名、数学成绩、语文成绩
+        self.name=name
+        self.math=math
+        self.chinese=chinese
+
+    def aveageScore(self):
+        # 计算平均分
+        return (self.math+self.chinese)/2
+
+s=[Student('张三',80,90),Student('李四',100,100)]
+for i in s:
+    # 遍历学生列表，打印学校、姓名、平均分
+    print(i.school,i.name,i.aveageScore())

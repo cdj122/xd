@@ -1,0 +1,26 @@
+class mydate:
+    def __init__(self,y=2023,m=11,d=30):
+        self.day=d
+        self.month=m
+        self.year=y
+    def showdate(self):
+        print(self.year,self.month,self.day)
+d=mydate(2023,13,30)
+d.showdate()
+delattr(d,'day')
+print(d.day)    # 访问不存在的属性会报错
+print(hasattr(d,'day'))
+print(getattr(d,'day'))
+print(getattr(d,'day',100))
+class mydate:
+    def __init__(self,y=2023,m=11,d=30):
+        self.day=d
+        self.month=m
+        self.year=y
+            
+    def __getattr__(self,attr):
+        if attr=='day':
+            return 100
+        elif attr=='month':
+            return 100
+        
